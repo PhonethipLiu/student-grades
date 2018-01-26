@@ -21,7 +21,7 @@ let grades = {
     F: 0
 }
 
-// How many of each grade? Accomplish this with a for..in loop.
+// Which grade had the most students achieve it? Use an if statment, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
 
 function currentGradeCount(array){
 for (let i = 0; i < array.length; i++) {
@@ -33,34 +33,28 @@ for (let i = 0; i < array.length; i++) {
             grades.C++;
         }else if (array[i] <= 70 && array[i] >= 61){
             grades.D++;
-        }else //(scores[i] <= 60)
+        }else //(array[i] <= 60)
         { grades.F++;
         }
      }
-    console.log("There are " + grades.A + " A's, " + grades.B + " B's, " + grades.C + " C's, " + grades.D + " D's, " + grades.F + " F's.");
-}
+     console.log("There are " + grades.A + " A's, " + grades.B + " B's, " + grades.C + " C's, " + grades.D + " D's, " + grades.F + " F's.");
+     
+};
         
 currentGradeCount(scores);
-       
+
  
-// What is the lowest score? Sort the array and find out.
-
-const lowestGrade = Math.max(grades.lenght);
-console.log("The lowest score is " + lowestGrade + ".");
-
-// What is the highest score?
-const highestGrade = Math.max(scores);
-console.log("The highest score is " + highestGrade + ".");    
-   
-// Which grade had the most students achieve it? Use an if statment, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
-
-
 // Which grade had the fewest students achieve it?
-// const fewestGrade = scores.reduce(function(a,b){
-//     return (a,b);
+
+    
+    
+// return Math.min(a,b);
+
 // });
-// console.log(fewestGrade); 
 
 
-
-
+let fewestGrade = grades.sort(function(a,b) {
+    return (a-b) 
+});
+// const lowestScore = scores.sort(function(a,b){
+//     return(a,b);
