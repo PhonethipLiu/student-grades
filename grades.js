@@ -1,53 +1,60 @@
-// Use console.log() to output the following criteria to the browser console.
-// How many of each grade? Accomplish this with a for..in loop.
-// What is the lowest score? Sort the array and find out.
-// What is the highest score?
-// Which grade had the most students achieve it? Use an if statment, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
-// Which grade had the fewest students achieve it?
-// var currentGradeCount = 
-
 const scores = [82, 71, 62, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87, 60];
-const grades = currentGradeCount;
 
-    // switch (scores) {
-    //     // A score of 91-100 is an A
-    //      case scores <= 100 && score >= 91:
-    //          console.log("A");
-        
-    //      // A score of 81-90 is a B
-    //      case scores <= 90 && score >= 81:
-    //          console.log("B");
-             
-    //      // A score of 71-80 is a C
-    //      case scores <= 80 && score >= 71:
-    //          console.log("C");
-             
-    //      // A score of 61-70 is a D
-    //       case scores <= 70 && score >= 61:
-    //          console.log("D");
-          
-    //      // A score of 50-60 is an F
-    //      default:
-    //          console.log("F");
-    //  } // You'll need to change this line of code
+// What is the lowest score? Sort the array and find out.
+const lowestScore = scores.reduce(function(a,b){
+    return Math.min(a,b);
+});
+console.log("The lowest score is " + lowestScore + ".");
 
+// What is the highest score?
+const highestScore = scores.reduce(function(a,b){
+return Math.max(a,b);
+});
+console.log("The highest score is " + highestScore + ".");
 
-for (let i = 0; i < scores.length; i++) {
-    
-    if (scores[i] <= 100 && scores[i] >= 91){
-        console.log("A");
-        } else if (scores[i] <= 90 && scores[i] >= 81){
-             console.log("B");
-        } else if (scores[i] <= 80 && scores[i] >= 71){
-             console.log("C");
-        } else if (scores[i] <= 70 && scores[i] >= 61){
-             console.log("D");
-        } else //(scores[i] <= 60)
-        { console.log("F");
+// way to keep count of each letter grade after looping
+let grades = {
+    A: 0,
+    B: 0,
+    C: 0,
+    D: 0,
+    F: 0
+}
+
+// Which grade had the most students achieve it? Use an if statment, and a currentGradeCount variable, in your for..in loop to see if the current grade's value is higher than the last one.
+
+function currentGradeCount(array){
+for (let i = 0; i < array.length; i++) {
+    if (array[i] <= 100 && array[i] >= 91){
+            grades.A++; 
+        }else if (array[i] <= 90 && array[i] >= 81){
+            grades.B++;
+        }else if (array[i] <= 80 && array[i] >= 71){
+            grades.C++;
+        }else if (array[i] <= 70 && array[i] >= 61){
+            grades.D++;
+        }else //(array[i] <= 60)
+        { grades.F++;
         }
-    };
-     console.log(scores);
+     }
+     console.log("There are " + grades.A + " A's, " + grades.B + " B's, " + grades.C + " C's, " + grades.D + " D's, " + grades.F + " F's.");
+     
+};
+        
+currentGradeCount(scores);
 
-     scores.sort(function(a,b){
-         return
-     })
+ 
+// Which grade had the fewest students achieve it?
+
+    
+    
+// return Math.min(a,b);
+
+// });
+
+
+let fewestGrade = grades.sort(function(a,b) {
+    return (a-b) 
+});
+// const lowestScore = scores.sort(function(a,b){
+//     return(a,b);
