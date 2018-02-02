@@ -58,7 +58,6 @@ for(let i = 0; i < scores.length; i++) {
         default: console.log("invalid grade");
     }
 }
-
 let lowHigh = scores.sort(function(a, b){return a-b});
 
 console.log("lowest", lowHigh[0]);
